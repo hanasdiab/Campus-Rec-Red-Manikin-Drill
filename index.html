@@ -1,0 +1,63 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Red Manikin Drill Practice</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="quiz-container">
+
+    <!-- Intro Screen -->
+    <div id="intro">
+      <h1 class="main-header">University of Houston Campus Rec</h1>
+
+      <img
+        src="https://play-lh.googleusercontent.com/x_amUMcCa242S34yvYk3NaIFDfOUzqB241DHMi_Z4xBPp_2UVzL1okTMtPVPM8_nlPU"
+        alt="Campus Rec Banner"
+        class="banner-image"
+      />
+
+      <h2 class="red-title">Red Manikin Drill Practice</h2>
+      <p class="description">
+        This interactive quiz will help you practice for Red Manikin drills.
+      </p>
+
+      <input
+        type="text"
+        id="name-input"
+        placeholder="Enter your name"
+        autocomplete="off"
+      />
+
+    
+
+      <button id="start-btn">Start Quiz</button>
+    </div>
+
+    <!-- Quiz Screen (hidden initially) -->
+    <div id="quiz" style="display:none;">
+      <!-- Quiz Header (status pills) -->
+      <div id="quiz-header" class="quiz-header">
+        <div id="user-pill" class="pill"></div>
+        <div id="mode-pill" class="pill"></div>
+        <div id="count-pill" class="pill"></div>
+      </div>
+
+      <div id="progress-container">
+        <div id="progress-bar" class="progress-bar"></div>
+      </div>
+
+      <div id="question" class="question-text"></div>
+      <div id="choices"></div>
+      <div id="feedback" aria-live="polite"></div>
+      <button id="next-btn" style="display: none;">Next</button>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

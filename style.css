@@ -1,0 +1,257 @@
+/* style.css */
+
+/* Base styles */
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background-color: #eb3150;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.quiz-container {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 720px; /* slightly wider for desk computer */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+/* Intro Styles */
+.main-header {
+  font-size: 30px;
+  text-align: center;
+  color: #C8102E;
+  margin-bottom: 10px;
+}
+
+.banner-image {
+  width: 100%;
+  height: clamp(160px, 20vw, 240px);
+  object-fit: contain;
+  background: #ffffff;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  display: block;
+}
+
+
+
+.red-title {
+  font-size: 22px;
+  color: #C8102E;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.description {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: 700; /* bold */
+  color: #000;      /* black */
+}
+
+
+#name-input {
+  display: block;
+  margin: 0 auto 15px auto;
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Mode Selector */
+.mode-select {
+  margin: 16px 0 18px 0;
+  padding: 14px;
+  border: 1px solid #e6e6e6;
+  border-radius: 8px;
+  background: #fafafa;
+}
+
+.mode-label {
+  margin: 0 0 10px 0;
+  font-weight: 700;
+  color: #333;
+}
+
+.mode-option {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+#start-btn {
+  display: block;
+  margin: 0 auto;
+  padding: 12px;
+  font-size: 16px;
+  background-color: #8b0000;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#start-btn:hover {
+  background-color: #a00000;
+}
+
+/* Quiz Header (pills) */
+.quiz-header {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.pill {
+  padding: 8px 10px;
+  border-radius: 999px;
+  background: #f3f3f3;
+  border: 1px solid #e3e3e3;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Quiz Styles */
+.question-text {
+  font-size: 26px;
+  font-weight: 700;
+  color: #7a0000;
+  margin-bottom: 18px;
+  line-height: 1.3;
+}
+
+#choices button {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 14px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 8px;
+  border: 1px solid #8b0000;
+  background-color: white;
+  color: #8b0000;
+  transition: background-color 0.2s, color 0.2s;
+  text-align: left;
+  font-weight: 600;
+}
+
+#choices button:hover:enabled {
+  background-color: #8b0000;
+  color: white;
+}
+
+#choices button:disabled {
+  cursor: not-allowed;
+  opacity: 0.95;
+}
+
+/* Feedback Panel */
+#feedback {
+  margin-top: 18px;
+  padding: 14px;
+  border-radius: 8px;
+  background: #f6f6f6;
+  border: 1px solid #e6e6e6;
+  font-weight: 700;
+  min-height: 24px;
+  font-size: 18px;
+}
+
+/* Correct/Wrong highlights (for later logic) */
+#choices button.correct {
+  background-color: #2e7d32 !important;
+  color: white !important;
+  border-color: #2e7d32 !important;
+}
+#choices button.wrong {
+  background-color: #c62828 !important;
+  color: white !important;
+  border-color: #c62828 !important;
+}
+
+#next-btn {
+  margin-top: 20px;
+  padding: 12px;
+  font-size: 18px;
+  background-color: #8b0000;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#next-btn:hover {
+  background-color: #a00000;
+}
+
+/* Progress Bar */
+#progress-container {
+  width: 100%;
+  background-color: #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 10px;
+  margin-bottom: 18px;
+}
+
+.progress-bar {
+  height: 10px;
+  background-color: #8b0000;
+  width: 0%;
+  transition: width 0.3s ease-in-out;
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 600px) {
+  .main-header {
+    font-size: 24px;
+  }
+
+  .red-title {
+    font-size: 20px;
+  }
+
+  .banner-image {
+    max-height: 150px;
+  }
+
+  .question-text {
+    font-size: 20px;
+  }
+
+  #choices button {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  #name-input {
+    font-size: 16px;
+    padding: 8px;
+  }
+
+  #start-btn,
+  #next-btn {
+    font-size: 16px;
+    padding: 10px;
+  }
+}
