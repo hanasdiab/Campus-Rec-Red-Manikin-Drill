@@ -53,7 +53,7 @@ const questions = [
       "Top Left Side & Bottom Left Side",
       "On the front & on the back",
     ],
-    answer: "Top right & left side under armpit",
+    answer: "Upper Right Side & Lower Left Side"",
   },
   {
     question: "AED is now analyzing, what do you do?",
@@ -208,4 +208,5 @@ if (score === total) {
     }),
   });
 }
+
 
