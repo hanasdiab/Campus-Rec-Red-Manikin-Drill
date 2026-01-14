@@ -42,15 +42,15 @@ const questions = [
     answer: "30,2",
   },
   {
-    question: "How many BPM are the compressions?",
+    question: "How many Beats Per Minute are the compressions?",
     choices: ["90-100 BPM", "100-110 BPM", "100-120 BPM"],
     answer: "100-120 BPM",
   },
   {
     question: "AED has now arrived, how will you place the pads?",
     choices: [
-      "Top right & left side under armpit",
-      "Top left & bottom left",
+      "Upper Right Side & Lower Left Side",
+      "Top Left Side & Bottom Left Side",
       "On the front & on the back",
     ],
     answer: "Top right & left side under armpit",
@@ -154,14 +154,22 @@ function showCompletion() {
   progressBar.style.width = "100%";
   nextBtn.style.display = "none";
 
-  const total = questions.length;
-  const scoreText = `Score: ${score} / ${total}`;
+ const total = questions.length;
 
-  if (score === total) {
-    feedbackEl.textContent = `🎉 ${scoreText} — You passed.`;
-  } else {
-    feedbackEl.textContent = `${scoreText} — You must score 100% to pass. Please retake the practice.`;
-  }
+if (score === total) {
+  feedbackEl.innerHTML = `
+    <strong>Name:</strong> ${userName}<br>
+    <strong>Score:</strong> ${score} / ${total}<br>
+    🎉 You passed.
+  `;
+} else {
+  feedbackEl.innerHTML = `
+    <strong>Name:</strong> ${userName}<br>
+    <strong>Score:</strong> ${score} / ${total}<br>
+    ⚠️ You must score 100% to pass. Please retake the practice.
+  `;
+}
+
 
   const restartBtn = document.createElement("button");
   restartBtn.textContent = "Retake Practice";
@@ -200,3 +208,4 @@ function showCompletion() {
     }),
   });
 }
+
